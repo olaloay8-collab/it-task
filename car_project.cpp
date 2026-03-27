@@ -22,6 +22,16 @@ int main() {
         cin >> choice;
 
         if (choice == 1) {
+         cout << "Enter slot number (1-10): ";
+            cin >> slotNum;
+            if (slotNum >= 1 && slotNum <= 10 && parkingSlots[slotNum-1] == 0) {
+                cout << "Enter Plate Number: ";
+                cin >> carPlates[slotNum-1];
+                parkingSlots[slotNum-1] = 1;
+                cout << "Success! Car parked.\n";
+            } else {
+                cout << "Error: Slot is full or invalid.\n";
+            }
             cout << "\n--- Current Slots Status ---\n";
             for (int i = 0; i < 10; i++) {
                 cout << "Slot " << i + 1 << ": " << (parkingSlots[i] == 0 ? "[ Empty ]" : "[ Full ] Plate: " + carPlates[i]) << endl;
