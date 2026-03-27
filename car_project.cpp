@@ -1,4 +1,4 @@
- #include <iostream>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -46,6 +46,17 @@ int main() {
             cout << "Waiting for Friend 2...\n";
         }
         else if (choice == 4) {
+         cout << "Enter Plate Number to search: ";
+            cin >> searchPlate;
+            bool found = false;
+            for (int i = 0; i < 10; i++) {
+                if (carPlates[i] == searchPlate) {
+                    cout << "Car found in Slot: " << i + 1 << endl;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) cout << "Car not found.\n";
             // TODO: Friend 3 insert Search code here
             cout << "Waiting for Friend 3...\n";
         }
@@ -53,5 +64,6 @@ int main() {
             break;
         }
     }
+  
     return 0;
 }
