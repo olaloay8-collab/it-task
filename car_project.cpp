@@ -1,27 +1,47 @@
-#include <iostream>
+ #include <iostream>
 #include <string>
+
 using namespace std;
 
+// Data: 10 parking slots
+int parkingSlots[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; 
+string carPlates[10] = {"", "", "", "", "", "", "", "", "", ""};
+
 int main() {
-    // --- متغيرات قابلة للتعديل من قبل الزميلات ---
-    string carName = "Zainab's Car"; // يمكن للزميلة تعديل الاسم
-    string wheelType = "O";          // يمكن للزميلة تعديل شكل التايرات
-    string colorCode = "0A";         // يمكن للزميلة تعديل اللون (Hacker style)
-    string bodyMaterial = "======";  // يمكن للزميلة تعديل شكل الهيكل
-    
-    // تطبيق اللون
-    string colorCmd = "color " + colorCode;
-    system(colorCmd.c_str());
+    int choice, slotNum;
+    string searchPlate;
 
-    cout << "Project: Collaborative Car Design" << endl;
-    cout << "Owner: " << carName << endl;
-    cout << "-------------------------------" << endl;
+    while (true) {
+        cout << "\n--- Smart Parking System ---\n";
+        cout << "1. View Parking Status\n";
+        cout << "2. Park a Car (Friend 1 Task)\n";
+        cout << "3. Remove a Car (Friend 2 Task)\n";
+        cout << "4. Search for a Car (Friend 3 Task)\n";
+        cout << "5. Exit\n";
+        cout << "Select option: ";
+        cin >> choice;
 
-    // رسم السيارة
-    cout << "      ___" << endl;
-    cout << "     //  || \\\\" << endl;
-    cout << "  __" << bodyMaterial << "__" << endl;
-    cout << "  " << wheelType << "           " << wheelType << endl;
-
+        if (choice == 1) {
+            cout << "\n--- Current Slots Status ---\n";
+            for (int i = 0; i < 10; i++) {
+                cout << "Slot " << i + 1 << ": " << (parkingSlots[i] == 0 ? "[ Empty ]" : "[ Full ] Plate: " + carPlates[i]) << endl;
+            }
+        } 
+        else if (choice == 2) {
+            // TODO: Friend 1 insert Park code here
+            cout << "Waiting for Friend 1...\n";
+        }
+        else if (choice == 3) {
+            // TODO: Friend 2 insert Remove code here
+            cout << "Waiting for Friend 2...\n";
+        }
+        else if (choice == 4) {
+            // TODO: Friend 3 insert Search code here
+            cout << "Waiting for Friend 3...\n";
+        }
+        else if (choice == 5) {
+            break;
+        }
+    }
     return 0;
 }
